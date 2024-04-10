@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block pageCss %}sign-in{% endblock  %}
+{% block bodyClass %}d-flex h-100 text-center text-bg-dark"{% endblock %}
+{% block content %}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Cover</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="/">Home</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Features</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+<main class="form-signin w-100 m-auto">
+    <form method="POST">
+      <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Register</h1>
+      <div class="form-floating">
+        <input type="text" class="form-control" name="fullName" id="Name" placeholder="Name">
+        <label for="Name" style="color: black;">Full Name</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" name="userName" id="Username" placeholder="Username">
+        <label for="Username" style="color: black;">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="Email" name="email" placeholder="name@example.com">
+        <label for="Email" style="color: black;">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+        <label for="password" style="color: black;">Password</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" name="cnfpassword" id="cnfpassword" placeholder="Password">
+        <label for="cnfpassword" style="color: black;">Confirm Password</label>
+      </div>
+  
+
+      <button class="w-100 btn btn-lg btn-primary my-2" type="submit">Register</button>
+      <a href="/login/" class="redirectLink">Already a user? Login.</a>
+      <p class="mt-5 mb-3 text">&copy; 2023</p>
+
+    </form>
+  </main>
+</div>               
+{% endblock %}

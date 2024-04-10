@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block title %}Manage Items{% endblock %}
+{% block pageCss %}settings{% endblock %}
+{% block addHead %}
+    <link href="/static/css/shop.css" rel="stylesheet">
+    <link href="/static/css/sidebars.css" rel="stylesheet">
+{% endblock %}
+{% block bodyClass %}d-flex h-100 text-center text-bg-dark"{% endblock %}
+{% block content %}
+<div class="d-flex flex-column w-100">
+    <div class="d-flex justify-content-between align-items-center flex-rows w-100">
+        <h1 class="h1 mt-5 ">Manage Items</h1>
+        <h5 class="h5 mt-5 ">Shop Name</h5>
+    </div>
+    <hr>
+    <div class="d-flex flex-column justify-content-center">
+        <h3 class="h3">Item List</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non earum quidem fugiat expedita mollitia autem? Neque architecto quod a nesciunt ex non nobis repellat iste enim! Totam cum eos nostrum.</p>
+    </div>
+    <div class="d-flex flex-column w-100">
+        <table class="table table-dark text-center">
+            <thead class="align-items-center">
+                <tr>
+                    <th scope="col">Item Index</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Date Added</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Product ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="fs-5">
+                    <th scope="row">1</th>
+                    <td>Handmade Ring (Black Beads)</td>
+                    <td>69</td>
+                    <td>21-02-2023 17:56:28</td>
+                    <td><button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#editProductModal" data-bs-name="Handmade Ring (Black Beads)" data-bs-quantity="69" data-bs-description="A handmade ring , with premium quality beads , perfect for gifting" data-bs-pid="HND0210270807">Edit Item</button></td>
+                    <td>HND0210270807</td>
+                </tr>
+                <tr class="fs-5">
+                    <th scope="row">2</th>
+                    <td>Handmade Ring (Evil Eye)</td>
+                    <td>40</td>
+                    <td>23-02-2023 23:18:08</td>
+                    <td><button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#editProductModal" data-bs-name="Handmade Ring (Evil Eye)" data-bs-quantity="40" data-bs-description="A handmade ring , with premium quality beads and evil eye to protect your loved ones, perfect for gifting" data-bs-pid="HND0807020204">Edit Item</button></td>
+                    <td>HND0807020204</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="Icon change" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark">
+            <div class="modal-header bg-dark">
+                <h1 class="modal-title fs-5" id="modalEditTitle"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-dark" id="infoEditingModal">
+                <div class="d-flex flex-column">
+                    <div class="input-group my-2">
+                        <span class="input-group-text inputbg">Item Name</span>
+                        <input type="text" class="form-control formSettings" id="modalInputName" name="itemName" placeholder="Item Name" aria-label="Item Name">
+                        <input type="hidden" name="ProductID" id="modalInputPid">
+                    </div>
+                    <div class="input-group my-2">
+                        <span class="input-group-text inputbg">Item Quantity</span>
+                        <input type="text" class="form-control formSettings" id="modalInputQuantity" name="itemQuantity" placeholder="Item Quantity" aria-label="Item Quantity">
+                    </div>
+                    <div class="input-group my-2">
+                        <span class="input-group-text inputbg">Item Description</span>
+                        <textarea class="form-control formSettings" id="modalInputDescription" name="itemDescription" placeholder="Item Description" aria-label="Item Description" style="height: 169px"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-evenly">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Delete Item</button>
+                <button type="button" class="btn btn-outline-success">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const myModal = document.getElementById('editProductModal');
+    myModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const name = button.getAttribute('data-bs-name');
+        const quantity = button.getAttribute('data-bs-quantity');
+        const description = button.getAttribute('data-bs-description');
+        const productId = button.getAttribute('data-bs-pid');
+        
+        document.getElementById('modalInputName').value = name
+        document.getElementById('modalInputQuantity').value = quantity
+        document.getElementById('modalInputDescription').innerText = description
+        document.getElementById('modalInputPid').value = productId 
+        document.getElementById('modalEditTitle').innerText = `Editing ${name}`
+    })
+</script>
+{% endblock %}

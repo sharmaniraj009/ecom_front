@@ -1,0 +1,116 @@
+.icon-list li::before {
+  display: block;
+  flex-shrink: 0;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: .5rem;
+  content: "";
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23212529' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z'/%3E%3C/svg%3E") no-repeat center center / 100% auto;
+}
+.redirectLink{
+  margin-top: 5px;
+  color: white;
+  text-decoration: none;
+}
+a.redirectLink:hover{
+  color: rgb(255, 0, 69);
+}
+.shopButton{
+    border-color: white;
+    color: white;
+}
+.btnFill{
+    border-color: white;
+    color: white;    
+}
+a.btnFill:hover{
+    border-color: black;
+    background-color: white;
+    color:black;
+}
+.btnFill2{
+    border-color: #77b900;
+    color: white;    
+}
+a.btnFill2:hover{
+    border-color: #77b900;
+    background-color: #212529;
+    color:#77b900;
+}
+.btnFill3{
+    border-color: #a61112;
+    color: white;    
+}
+a.btnFill3:hover{
+    border-color: #a61112;
+    background-color: #212529;
+    color: #a61112;
+}
+.btnFill4{
+    border-color: #58afe8;
+    color: white;    
+}
+a.btnFill4:hover{
+    border-color: #58afe8;
+    background-color: #58afe8;
+    color: white;
+}
+.btnFill5{
+    border-color: gray;
+    color: white;    
+}
+a.btnFill5:hover{
+    border-color: green !important;
+    background-color: green !important;
+    color: white;
+}
+.orderCard{
+    background-color: rgba(255,255,255,0)!important;
+    min-width: max-content;
+    border: none!important;
+}
+.infoBox{
+    border-color: white !important;
+    box-shadow: 0px 0px 25px 10px grey !important;
+}
+.formSettings{
+    background-color: #212529;
+    color: white;
+    border-color: gray !important;
+
+}
+.formSettings::placeholder{
+    color: white;
+    text-align: center;
+}
+.formSettings option{
+    background-color: #212529;
+    color: white;
+    text-align: center;
+}
+.formSettings:focus{
+    background-color: #212529;
+    color: white;
+    border-color: gray !important;
+    box-shadow: 0px 0px 1px 2px gray;
+}
+.formSettings:disabled{
+    background-color: #212529;
+    color: white;
+    border-color: gray !important;
+}
+.accStatus{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:medium;
+}
+.tabPillColor{
+    background-color: none !important;
+}
+.tabPillColor button{
+    color: #a61112 !important;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: white !important;
+    background-color:#212529 !important;
+}

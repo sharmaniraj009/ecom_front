@@ -1,0 +1,81 @@
+/* * Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .desktopRows{
+        flex-direction: column;
+    }
+    .desktopCols{
+        flex-direction: row;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .desktopRows{
+        flex-direction: column;
+    }
+    .desktopCols{
+        flex-direction: row;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .desktopRows{
+        flex-direction: column;
+
+    }
+    .desktopCols{
+        flex-direction: row;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .desktopRows{
+        flex-direction: row;
+    }
+    .desktopCols{
+        flex-direction: column;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .desktopRows{
+        flex-direction: row ;
+    }
+    .desktopCols{
+        flex-direction: column;
+    }
+}
+.nav-pills .nav-link.active{
+    color: white !important;
+    background-color: #1e1e1e;
+}
+.nav-link{
+    color: #a61112 !important;
+}
+button.nav-link:hover{
+    border-color: #a61112;
+    background-color: #1e1e1e;
+    color: #a61112;
+}
+.icon-list li::before{
+    background-color: white !important;
+    border-radius: 10%;
+}
+
+.list-group .list-group-item{
+    background-color: transparent !important;
+    color: white !important;
+}
+.inputbg{
+    background-color: 212529 !important;
+    color: white !important;
+}
+.zoom {
+    transition: transform .5s; /* Animation */
+}
+.zoom:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }

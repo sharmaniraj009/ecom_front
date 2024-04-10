@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block title %}Edit Shop{% endblock %}
+{% block pageCss %}settings{% endblock %}
+{% block addHead %}
+    <link href="/static/css/shop.css" rel="stylesheet">
+{% endblock %}
+{% block bodyClass %}d-flex h-100 text-center text-bg-dark"{% endblock %}
+{% block content %}
+<div class="d-flex w-75 p-3 mx-auto flex-column">
+    <header class="mb-auto px-5">
+        <div class="mb-5">
+            <h3 class="float-md-start mb-0">Abhay Malik</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Editing Shop</a>
+                </nav>
+        </div>
+    </header>
+  
+    <main>
+        <div class="d-flex flex-column w-100 justify-content-center w-100">
+            <div class="d-flex my-5 align-self-center flex-column">
+                <span class="display-1">Edit shop</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem adipisci odio quam similique, quo doloribus itaque quidem perspiciatis aspernatur dolor repellat deserunt obcaecati architecto esse, laudantium ratione, temporibus amet dolore?</p>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-column align-items-center">
+                    <h1 class="h1">Shop Details</h1>
+                </div>    
+                <div class="d-flex justify-content-around desktopRows w-100">
+                    <div class="d-flex flex-column align-self-center align-items-center">
+                        <div class="d-flex flex-column m-2">
+                            <span class="h3 w-100">Shop Name</span>
+                            <input class="form-control formSettings shopDetails text-center" id="sName" type="text" value="xyz handcrafts" disabled>
+                        </div>
+                        <div class="d-flex flex-column m-2">
+                            <span class="h3 w-100">Shop Owner</span>
+                            <input class="form-control formSettings shopDetails text-center" id="sOwner" type="text" value="Sussy Baka" disabled>
+                        </div>
+                        <div class="d-flex flex-column m-2">
+                            <span class="h3 w-100">Shop Category</span>
+                            <input class="form-control formSettings shopDetails text-center" id="sCategory" type="text" value="Handmade Products" disabled>
+                        </div>
+                        <div class="d-flex flex-column m-2">
+                            <button class="btn btn-outline-primary " onclick="editShop()" id="shopEditButton">Edit Details</button>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column my-2 align-self-center align-items-start">
+                        <img src="/static/img/server/exampleIcon.svg" class="img-fluid w-100">
+                        <button class="btn btn-outline-light align-self-center" data-bs-toggle="modal" data-bs-target="#iconChange">Change Icon</button>
+                    </div>
+                </div>
+                <div class="d-flex my-5 flex-rows justify-content-evenly w-100 flex-wrap align-self-center">
+                    <button type="button" class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#addItem">Add Item</button>
+                    <a type="button" href="/shop/items" class="btn btn-outline-info">Manage Items</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for Adding and Item to Shop-->
+        <div class="modal fade" id="addItem" tabindex="-1" aria-labelledby="Item add Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark">
+                    <div class="modal-header bg-dark">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Item to xyz handcrafts</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-dark">
+                        <div class="d-flex flex-column">
+                            <div class="input-group my-2">
+                                <span class="input-group-text inputbg">Item Name</span>
+                                <input type="text" class="form-control formSettings" name="itemName" placeholder="Item Name" aria-label="Item Name">
+                            </div>
+                            <div class="input-group my-2">
+                                <span class="input-group-text inputbg">Item Sub Category</span>
+                                <input type="text" class="form-control formSettings" name="itemSubCat" placeholder="Subcategory" aria-label="Sub Category">
+                            </div>
+                            <div class="input-group my-2">
+                                <span class="input-group-text inputbg">Item Price</span>
+                                <input type="text" class="form-control formSettings" name="itemPrice" placeholder="Price" aria-label="Item Price">
+                            </div>
+                            <div class="input-group my-2">
+                                <span class="input-group-text inputbg">Item Description</span>
+                                <textarea class="form-control formSettings" name="itemDescription" placeholder="Item Description" aria-label="itemDescription"></textarea>
+                            </div>
+                            <div class="input-group my-2">
+                                <span class="input-group-text inputbg">Item Quantity</span>
+                                <input type="number" class="form-control formSettings" name="itemStock" placeholder="Item Stock" aria-label="Item Quantity">
+                            </div>
+                            <div class="input-group my-2">
+                                <span class="input-group-text inputbg">Item Images</span>
+                                <input type="file" class="form-control formSettings" name="itemImage" placeholder="Item Images" aria-label="Item Images">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-light">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Changing Icon for shop -->
+        <div class="modal fade" id="iconChange" tabindex="-1" aria-labelledby="Icon change" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark">
+                    <div class="modal-header bg-dark">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Change Icon for Shop</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-dark">
+                        <div class="d-flex flex-column">
+                            <div class="input-group my-2">
+                                <span class="input-group-text inputbg">Upload Icon</span>
+                                <input type="file" class="form-control formSettings" name="itemImage" placeholder="Item Images" aria-label="Item Images">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-light">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{%endblock%}

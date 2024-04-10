@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %}Add Shop{% endblock %}
+{% block pageCss %}shop{% endblock  %}
+{% block bodyClass %}d-flex h-100 text-center text-bg-dark"{% endblock %}
+{% block content %}
+<div class="d-flex w-75 p-3 mx-auto flex-column">
+    <header class="mb-auto px-5">
+        <div class="mb-5">
+            <h3 class="float-md-start mb-0">Niraj Sharma</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Creating Shop</a>
+                </nav>
+        </div>
+    </header>
+  
+    <main>
+        <div class="d-flex justify-content-center w-100 flex-column" style="min-width: min-content !important;">
+            <div class="d-flex align-items center flex-column">
+                <h3 class="display-3 h3 align-self-center">Add Shop</h3>
+                <p class="h6 w-100 align-self-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ratione, repellat qui accusantium magni unde similique iste eaque dolorum quia deserunt hic accusamus facere est, aliquam veritatis ipsam vel earum?</p>
+            </div>
+            <h4 class="h4 mt-5 ps-3 align-self-start">Shop Details</h4>
+            <div class="d-flex flex-column">
+                <div class="d-flex desktopRows justify-content-around w-100">
+                    <div class="d-flex align-items-start m-1 w-100 flex-column">
+                        <div class="d-flex justify-content-start flex-column w-100">            
+                            <div class="d-flex justify-content-around flex-column mt-5 mx-3 ">
+                                <p class="h6 align-self-start">Owner Details :</p>
+                                <div class="d-flex justify-content-around flex-rows">
+                                    <input type="text" class="form-control me-3 " id="fName" placeholder="First Name">
+                                    <input type="text" class="form-control " id="lName" placeholder="Last Name">
+                                </div>
+                                <div class="d-flex justify-content-around flex-column mt-3">
+                                    <input type="text" class="form-control me-3" id="contactNumber" placeholder="Phone Number">
+                                    <input type="email" class="form-control me-3 mt-3" id="emailAddress" placeholder="Email">
+                                </div>
+                            </div>
+        
+                        </div>        
+                    </div>
+                    <div class="d-flex align-items-start m-1 w-100 flex-column">
+                        <div class="d-flex justify-content-start flex-column w-100">            
+                            <div class="d-flex justify-content-around flex-column mt-5 mx-3 ">
+                                <p class="h6 align-self-start">Shop Details :</p>
+                                <div class="d-flex justify-content-around flex-column">
+                                    <input type="text" class="form-control me-3 col-8" id="sTitle" placeholder="Shop title">
+                                    <input type="email" class="form-control me-3 mt-3" id="shopCategory" placeholder="Shop Category">
+                                    <textarea class="form-control me-3 mt-3" id="aboutShop" placeholder="Shop Description"></textarea>
+                                </div>
+                            </div>
+        
+                        </div>        
+                    </div>
+                </div>
+                <div class="d-flex justify-content-start desktopRows">
+                    <div class="d-flex justify-content-start flex-rows w-100">
+                        <div class="d-flex justify-content-center">
+                            <img src="/static/img/server/exampleIcon.svg" class="img w-100 h-100">
+                        </div>
+                        <div class="d-flex flex-column align-self-center">
+                            <p class="h6 align-self-center">Add Shop Icon</p>
+                            <input type="file" class="form-control my-2">
+                            <button class="btn btn-outline-success">Save</button>
+                        </div>
+                    </div>
+                    <div class="d-flex align-self-center ms-5 flex-column w-100">
+                        <div class="d-flex flex-rows justify-content-center ">
+                            <input type="checkbox" class="mx-3" required> 
+                            <p class="h6">By clicking to this checkbox you agree to our this and that, with that too.</p>
+                        </div>
+                        <div class="d-flex w-100 justify-content-center my-5">
+                            <button class="btn btn-outline-primary align-self-center">Create Shop</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+  
+    <footer class="mt-auto text-white-50">
+      <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    </footer>
+</div>
+{%endblock%}
